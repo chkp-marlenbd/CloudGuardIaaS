@@ -7,7 +7,7 @@ variable "allocate_and_associate_eip" {
 variable "eip_name" {
   type = string
   description = "Elastic IP resource name"
-  default = ""
+  default = "tf-eip"
 }
 
 variable "instance_id" {
