@@ -74,7 +74,7 @@ variable "instance_tags" {
 variable "version_license" {
   type = string
   description = "version and license"
-  default = "R81-PAYG"
+  default = "R81-BYOL"
 }
 module "validate_management_version" {
   source = "../modules/common/version_license"

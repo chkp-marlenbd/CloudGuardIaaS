@@ -75,10 +75,10 @@ fi
 #service autoprovision start
 
 if ${AllocateElasticIP} && [[ "${GatewayManagement}" == "Over the internet" ]]; then
-    addr="$(ip addr show dev eth0 | sed -n -e 's|^ *inet \\([^/]*\\)/.* eth0$|\\1|p')"
-    pub_addr="$(ip addr show dev eth0 | sed -n -e 's|^ *inet \\([^/]*\\)/.* eth0:1$|\\1|p')"
-    uid="$(mgmt_cli -r true show-generic-objects class-name com.checkpoint.objects.classes.dummy.CpmiHostCkp details-level full -f json | jq -r '.objects[] | select(.ipaddr == \"'$addr'\") | .uid')"
-    test -z "$uid\" || test -z $pub_addr || mgmt_cli -r true set-generic-object uid $uid ipaddr \"$pub_addr"
+    addr="$(ip addr show dev eth0 | sed -n -e 's|^ *inet \([^/]*\)/.* eth0$|\1|p')"
+    pub_addr="$(ip addr show dev eth0 | sed -n -e 's|^ *inet \([^/]*\)/.* eth0:1$|\1|p')"
+    uid="$(mgmt_cli -r true show-generic-objects class-name com.checkpoint.objects.classes.dummy.CpmiHostCkp details-level full -f json | jq -r '.objects[] | select(.ipaddr == "'$addr'") | .uid')"
+    test -z "$uid" || test -z $pub_addr || mgmt_cli -r true set-generic-object uid $uid ipaddr "$pub_addr"
 fi
 
 if [[ -n "${BootstrapScript}" ]]; then

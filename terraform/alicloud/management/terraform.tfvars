@@ -15,7 +15,7 @@ instance_tags = {
 }
 
 // --- Check Point Settings ---
-version_license = "R81-PAYG"
+version_license = "R81-BYOL"
 admin_shell = "/bin/bash"
 password_hash = "12345678"
 hostname = "mgmt-tf"
