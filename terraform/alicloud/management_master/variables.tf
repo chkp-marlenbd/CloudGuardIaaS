@@ -62,7 +62,6 @@ module "validate_instance_type" {
 variable "key_name" {
   type = string
   description = "The ECS Key Pair name to allow SSH access to the instances"
-  default = ""
 }
 variable "allocate_and_associate_eip" {
   type = bool

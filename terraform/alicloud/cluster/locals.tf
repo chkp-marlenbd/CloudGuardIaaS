@@ -14,4 +14,7 @@ locals {
   regex_valid_gateway_hostname = "^([A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?|)$"
   // Will fail if var.gateway_hostname is invalid
   regex_gateway_hostname = regex(local.regex_valid_gateway_hostname, var.gateway_hostname) == var.gateway_hostname ? 0 : "Variable [gateway_hostname] must be a valid hostname label or an empty string"
+
+  // Create RAM Role only if input variable ram_role_name was not provided
+  create_ram_role = var.ram_role_name == "" ? 1 : 0
 }

@@ -41,7 +41,6 @@ variable "instance_tags" {
 variable "key_name" {
   type = string
   description = "The ECS Key Pair name to allow SSH access to the instance"
-  default = ""
 }
 variable "image_id" {
   type = string

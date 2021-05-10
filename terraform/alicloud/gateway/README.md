@@ -30,7 +30,7 @@ provider "alicloud" {
 }
 ```
 ## Usage
-- Fill all variables in the management_master/**terraform.tfvars** file with proper values (see below for variables descriptions).
+- Fill all variables in the gateway/**terraform.tfvars** file with proper values (see below for variables descriptions).
 - From a command line initialize the Terraform configuration directory:
         terraform init
 - Create an execution plan:
